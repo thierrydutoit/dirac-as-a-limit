@@ -3,7 +3,7 @@ from numpy import *
 from matplotlib.pyplot import *
 
 st.title('The Dirac impulse seen as a limit')
-a=st.slider('Factor a', 1, 10, 1)
+a=st.slider('Factor a', 1, 20, 1)
 
 fe=10000;
 t=arange(-3,3,1/fe) 
