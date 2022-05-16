@@ -64,8 +64,7 @@ with col1:
    ax.fill_between(t,0,product)
    plot(t,cos(3*t),'--')
    st.pyplot(fig)
-   st.latex('''\int_{-\infty}^{\infty} f(t) \ a\ rect(at-\Delta) \,dt''')
-   st.metric("",around(integral,3))
+   st.metric("Integral",around(integral,3))
 
 with col2:
    product=multiply(tri_a, cos(3*t))
@@ -78,8 +77,7 @@ with col2:
    ax.fill_between(t,0,product)
    plot(t,cos(3*t),'--')
    st.pyplot(fig)
-   st.latex('''\int_{-\infty}^{\infty} f(t) \ a\ tri(at-\Delta) \,dt''')
-   st.metric("",around(integral,3))
+   st.metric("Integral",around(integral,3))
 
 with col3:
    product=multiply(sinc_a, cos(3*t))
@@ -92,8 +90,7 @@ with col3:
    ax.fill_between(t,0,product)
    plot(t,cos(3*t),'--')
    st.pyplot(fig)
-   st.latex('''\int_{-\infty}^{\infty} f(t) \ a\ sinc(at-\Delta) \,dt''')
-   st.metric("",around(integral,3))
+   st.metric("Integral",around(integral,3))
 
 st.markdown('When _a_ tends to infinity, these functions can no longer be plotted. They are therefore symbolically represented as an arrow, the amplitude of which is set to the integral of the function: 1, and termed as a _dirac impluse_.')
 
