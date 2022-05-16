@@ -91,7 +91,7 @@ with col3:
    ax.fill_between(t,0,product)
    plot(t,cos(3*t),'--')
    st.pyplot(fig)
-   st.latex('''\int_{-\infty}^{\infty} \cos(t) \ a\ sinc(at-\Delta) \,dt''')
+   st.latex('''\int_{-\infty}^{\infty} f(t) \ a\ sinc(at-\Delta) \,dt''')
    st.metric("",around(integral,3))
 
 st.markdown('When _a_ tends to infinity, these functions can no longer be plotted. They are therefore symbolically represented as an arrow, the amplitude of which is set to the integral of the function: 1, and termed as a _dirac impluse_.')
