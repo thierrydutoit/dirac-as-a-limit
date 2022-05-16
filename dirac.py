@@ -1,4 +1,3 @@
-   plot(t,cos(3*t),'--')
 import streamlit as st
 from numpy import *
 from matplotlib.pyplot import *
