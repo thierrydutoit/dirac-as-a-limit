@@ -47,9 +47,10 @@ with col3:
    plot(t,sinc_a)
    st.pyplot(fig3)
 
-st.markdown('''When _a_ grows, these functions, although not fully identical, tend to have the same effect _when used in an integral_: 
-            only their values very close to 0 contribute to the result, as shown in the example below with _f(t)=cos(3t)_.
-            the integral is the area in blue (taken with signs).''')
+st.markdown('''When _a_ grows, these functions, although not fully identical, tend to have the same 
+            effect _when used in an integral_: only their values very close to 0 contribute to the 
+            result, as shown in the example below with _f(t)=cos(3t)_. The integral is the area in 
+            blue (taken with signs).''')
 
 col1, col2, col3 = st.columns(3)
 
@@ -92,7 +93,9 @@ with col3:
    st.pyplot(fig)
    st.metric("Integral",around(integral,3))
 
-st.markdown('When _a_ tends to infinity, these functions can no longer be plotted. They are therefore symbolically represented as an arrow, the amplitude of which is set to the integral of the function: 1, and termed as a _dirac impluse_.')
+st.markdown('''When _a_ tends to infinity, these functions can no longer be plotted. 
+               They are therefore symbolically represented as an arrow, the amplitude of which 
+               is set to the integral of the function: 1, and termed as a _dirac impluse_.''')
 
 col1, col2, col3 = st.columns(3)
 
