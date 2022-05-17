@@ -4,8 +4,8 @@ from matplotlib.pyplot import *
 import matplotlib.patches as mpatches
 
 st.title('The Dirac impulse seen as a limit')
-a=st.slider('Factor a', 1.0, 10.0, 1.0)
-shift=st.slider('Delta', -3.0, 3.0, 0.0)
+a=st.slider('Amplification: a', 1.0, 20.0, 1.0)
+shift=st.slider('Time shift: Delta', -3.0, 3.0, 0.0)
 
 fe=10000;
 t=arange(-3,3,1/fe) 
@@ -22,97 +22,105 @@ def sincard(x):
     return divide(sin(pi*x),(pi*x))
 sinc_a=sincard(a*(t-shift))*a
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-   st.latex('''a\ rect(a(t-\Delta))''')
    fig1,ax1 = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,rect_a)
+   title(r'$a\ rect(a(t-\Delta))$')
    st.pyplot(fig1)
 
-
 with col2:
-   st.latex('''a\ tri(a(t-\Delta))''')
    fig2,ax2 = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,tri_a)
+   title(r'$a\ tri(a(t-\Delta))$')
    st.pyplot(fig2)
 
-
 with col3:
-   st.latex('''a\ sinc(a(t-\Delta))''')
    fig3,ax3 = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,sinc_a)
+   title(r'$a\ sinc(a(t-\Delta))$')
    st.pyplot(fig3)
 
-st.markdown('''When _a_ grows, these functions, although not fully identical, tend to have the same 
-            effect _when used in an integral_: only their values very close to 0 contribute to the 
-            result, as shown in the example below. We first multiply these functions with _f(t)=cos(3t)_. 
-            Then we compute the integral of the product. The integral is the area in blue (taken with signs).''')
-
-col1, col2, col3 = st.columns(3)
+with col4:
+   fig4,ax4 = subplots(figsize=(3,3))
+   xlim(-3,3); ylim(-2,2)
+   arrow = mpatches.Arrow(shift, 0, 0, 1)
+   ax4.add_patch(arrow)
+   plot([-3,3],[0,0])
+   title(r'$\delta(t-\Delta)$')
+   st.pyplot(fig4)
+   
+col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-   product=multiply(rect_a, cos(3*t))
-   integral=sum(product)/fe
+   product=multiply(rect_a, 2*cos(3*t))
+   integral1=sum(product)/fe
 
-   st.latex('''f(t) \ a\ rect(at-\Delta) ''')
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,product)
    ax.fill_between(t,0,product)
-   plot(t,cos(3*t),'--')
+   plot(t,2*cos(3*t),'--')
+   title(r'$f(t) \ a\ rect(a(t-\Delta)) $')
+   text(-2.3,-9,'integral='+str(around(integral1,2)),fontsize='xx-large')
    st.pyplot(fig)
-   st.metric("Integral",around(integral,3))
 
 with col2:
-   product=multiply(tri_a, cos(3*t))
-   integral=sum(product)/fe
+   product=multiply(tri_a, 2*cos(3*t))
+   integral2=sum(product)/fe
 
-   st.latex('''f(t) \ a\ tri(at-\Delta) ''')
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,product)
    ax.fill_between(t,0,product)
-   plot(t,cos(3*t),'--')
+   plot(t,2*cos(3*t),'--')
+   title(r'$f(t) \ a\ tri(a(t-\Delta)) $')
+   text(-2.3,-9,'integral='+str(around(integral2,2)),fontsize='xx-large')
    st.pyplot(fig)
-   st.metric("Integral",around(integral,3))
 
 with col3:
-   product=multiply(sinc_a, cos(3*t))
-   integral=sum(product)/fe
+   product=multiply(sinc_a, 2*cos(3*t))
+   integral3=sum(product)/fe
    
-   st.latex('''f(t) \ a\ sinc(at-\Delta) ''')
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,product)
    ax.fill_between(t,0,product)
-   plot(t,cos(3*t),'--')
+   plot(t,2*cos(3*t),'--')
+   title(r'$f(t) \ a\ sinc(a(t-\Delta)) $')
+   text(-2.3,-9,'integral='+str(around(integral2,2)),fontsize='xx-large')
    st.pyplot(fig)
-   st.metric("Integral",around(integral,3))
 
-st.markdown('''When _a_ tends to infinity, these functions can no longer be plotted. 
-               They are therefore symbolically represented as an arrow, the amplitude of which 
-               is set to the integral of the function: 1, and termed as a _dirac impluse_.''')
-
-col1, col2, col3 = st.columns(3)
-
-with col2:
-   
-   fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-1, 3)
-   arrow = mpatches.Arrow(shift, 0, 0, 1)
-   ax.add_patch(arrow)
+with col4:
+   fig4,ax4 = subplots(figsize=(3,3))
+   xlim(-3,3); ylim(-2, 2)
+   arrow = mpatches.Arrow(shift, 0, 0, 2*cos(3*shift))
+   ax4.add_patch(arrow)
    plot([-3,3],[0,0])
-   plot(t,cos(3*t),'--')
-   plot(shift,cos(3*shift),'yD')
-   st.pyplot(fig)
-   st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t- \Delta) \,dt''')
-   st.metric("",around(cos(3*shift),3))
-   st.markdown("or more generally:")
-   st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t- \Delta) \,dt=f(\Delta)''')
-   st.markdown("and in particular")
+   plot(t,2*cos(3*t),'--')
+   title(r'$f(t)\ \delta((t-\Delta)) $')
+   text(-2.3,-1.78,'integral='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
+   st.pyplot(fig4)
+  
+with st.expander("Open for comments"):
+   st.markdown('''The three plots on the top left show rectangle, triangle and sinc functions which 
+               can be modified using sliders _a_ and $\Delta$ . Notice that the integral of 
+               these fucntions is always 1, whatever _a_.''')
+   st.markdown('''When _a_ tends to infinity, these functions can no longer be plotted. 
+               They are therefore symbolically represented in the bottom plotas an arrow, the 
+               amplitude of which is set to the integral of the function: 1, and termed as 
+               a _dirac impluse_ $\delta(t)$, shown on the right.''')
+   st.markdown('''In the next four plots, we multiply our three functions with _f(t)=2cos(3t)_. 
+               Then we compute the integral of this product. The integral is the area in blue
+               (taken with signs). Multiplying the Dirac impulse by _2cos(3t)_ simply changes                the value of the impulse.''')
+   st.markdown('''When _a_ grows, we see that our three functions, although not fully identical, 
+               tend to have the same effect _when used in an integral_: only their values very 
+               close to their maximum contribute to the result. As a matter of fact, when
+               $\Delta$ is set to 0, all integrals tends to $f(0)$:''')
    st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t) \,dt=f(0)''')
- 
+   st.markdown('''When $\Delta$ is modified, all integrals tend to $f(\Delta)$:''')
+   st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
