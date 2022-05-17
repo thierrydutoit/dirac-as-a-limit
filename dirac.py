@@ -4,8 +4,12 @@ from matplotlib.pyplot import *
 import matplotlib.patches as mpatches
 
 st.title('The Dirac impulse seen as a limit')
-a=st.slider('Amplification: a', 1.0, 20.0, 1.0)
-shift=st.slider('Time shift: Delta', -3.0, 3.0, 0.0)
+
+col1, col2 = st.columns(2)
+with col1:
+   a=st.slider('Amplification: a', 1.0, 20.0, 1.0)
+with col2:
+   shift=st.slider('Time shift: Delta', -3.0, 3.0, 0.0)
 
 fe=10000;
 t=arange(-3,3,1/fe) 
@@ -25,38 +29,12 @@ sinc_a=sincard(a*(t-shift))*a
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-   fig1,ax1 = subplots(figsize=(3,3))
+   fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,rect_a)
    title(r'$a\ rect(a(t-\Delta))$')
-   st.pyplot(fig1)
-
-with col2:
-   fig2,ax2 = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-10, 10)
-   plot(t,tri_a)
-   title(r'$a\ tri(a(t-\Delta))$')
-   st.pyplot(fig2)
-
-with col3:
-   fig3,ax3 = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-10, 10)
-   plot(t,sinc_a)
-   title(r'$a\ sinc(a(t-\Delta))$')
-   st.pyplot(fig3)
-
-with col4:
-   fig4,ax4 = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2,2)
-   arrow = mpatches.Arrow(shift, 0, 0, 1)
-   ax4.add_patch(arrow)
-   plot([-3,3],[0,0])
-   title(r'$\delta(t-\Delta)$')
-   st.pyplot(fig4)
+   st.pyplot(fig)
    
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
    product=multiply(rect_a, 2*cos(3*t))
    integral1=sum(product)/fe
 
@@ -70,6 +48,12 @@ with col1:
    st.pyplot(fig)
 
 with col2:
+   fig,ax = subplots(figsize=(3,3))
+   xlim(-3,3); ylim(-10, 10)
+   plot(t,tri_a)
+   title(r'$a\ tri(a(t-\Delta))$')
+   st.pyplot(fig)
+
    product=multiply(tri_a, 2*cos(3*t))
    integral2=sum(product)/fe
 
@@ -83,6 +67,12 @@ with col2:
    st.pyplot(fig)
 
 with col3:
+   fig,ax = subplots(figsize=(3,3))
+   xlim(-3,3); ylim(-10, 10)
+   plot(t,sinc_a)
+   title(r'$a\ sinc(a(t-\Delta))$')
+   st.pyplot(fig)
+
    product=multiply(sinc_a, 2*cos(3*t))
    integral3=sum(product)/fe
    
@@ -96,27 +86,36 @@ with col3:
    st.pyplot(fig)
 
 with col4:
-   fig4,ax4 = subplots(figsize=(3,3))
+   fig,ax = subplots(figsize=(3.1,3))
+   xlim(-3,3); ylim(-2,2)
+   arrow = mpatches.Arrow(shift, 0, 0, 1)
+   ax.add_patch(arrow)
+   plot([-3,3],[0,0])
+   title(r'$\delta(t-\Delta)$')
+   st.pyplot(fig)
+
+   fig,ax = subplots(figsize=(3.1,3))
    xlim(-3,3); ylim(-2, 2)
    arrow = mpatches.Arrow(shift, 0, 0, 2*cos(3*shift))
-   ax4.add_patch(arrow)
+   ax.add_patch(arrow)
    plot([-3,3],[0,0])
    plot(t,2*cos(3*t),'--')
    title(r'$f(t)\ \delta((t-\Delta)) $')
    text(-2.3,-1.78,'integral='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
-   st.pyplot(fig4)
+   st.pyplot(fig)
   
 with st.expander("Open for comments"):
-   st.markdown('''The three plots on the top left show rectangle, triangle and sinc functions which 
-               can be modified using sliders _a_ and $\Delta$ . Notice that the integral of 
-               these fucntions is always 1, whatever _a_.''')
+   st.markdown('''The three plots on the top left show rectangle, triangle and sinc functions 
+               which can be modified using sliders _a_ and $\Delta$ . Notice that the integral 
+               of these functions is always 1, whatever _a_.''')
    st.markdown('''When _a_ tends to infinity, these functions can no longer be plotted. 
                They are therefore symbolically represented in the bottom plotas an arrow, the 
                amplitude of which is set to the integral of the function: 1, and termed as 
                a _dirac impluse_ $\delta(t)$, shown on the right.''')
    st.markdown('''In the next four plots, we multiply our three functions with _f(t)=2cos(3t)_. 
                Then we compute the integral of this product. The integral is the area in blue
-               (taken with signs). Multiplying the Dirac impulse by _2cos(3t)_ simply changes                the value of the impulse.''')
+               (taken with signs). Multiplying the Dirac impulse by _2cos(3t)_ simply changes
+                the value of the impulse.''')
    st.markdown('''When _a_ grows, we see that our three functions, although not fully identical, 
                tend to have the same effect _when used in an integral_: only their values very 
                close to their maximum contribute to the result. As a matter of fact, when
