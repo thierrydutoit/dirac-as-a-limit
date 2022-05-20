@@ -33,7 +33,7 @@ with col1:
    xlim(-3,3); ylim(-10, 10)
    plot(t,rect_a)
    title(r'$a\ rect(a(t-\Delta))$')
-   xlabel('Time (seconds)')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
    
    product=multiply(rect_a, 2*cos(3*t))
@@ -46,6 +46,7 @@ with col1:
    plot(t,2*cos(3*t),'--')
    title(r'$f(t) \ a\ rect(a(t-\Delta)) $')
    text(-2.3,-9,'integral='+str(around(integral1,2)),fontsize='xx-large')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
 
 with col2:
@@ -53,6 +54,7 @@ with col2:
    xlim(-3,3); ylim(-10, 10)
    plot(t,tri_a)
    title(r'$a\ tri(a(t-\Delta))$')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
 
    product=multiply(tri_a, 2*cos(3*t))
@@ -65,6 +67,7 @@ with col2:
    plot(t,2*cos(3*t),'--')
    title(r'$f(t) \ a\ tri(a(t-\Delta)) $')
    text(-2.3,-9,'integral='+str(around(integral2,2)),fontsize='xx-large')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
 
 with col3:
@@ -72,6 +75,7 @@ with col3:
    xlim(-3,3); ylim(-10, 10)
    plot(t,sinc_a)
    title(r'$a\ sinc(a(t-\Delta))$')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
 
    product=multiply(sinc_a, 2*cos(3*t))
@@ -84,6 +88,7 @@ with col3:
    plot(t,2*cos(3*t),'--')
    title(r'$f(t) \ a\ sinc(a(t-\Delta)) $')
    text(-2.3,-9,'integral='+str(around(integral2,2)),fontsize='xx-large')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
 
 with col4:
@@ -93,6 +98,7 @@ with col4:
    ax.add_patch(arrow)
    plot([-3,3],[0,0])
    title(r'$\delta(t-\Delta)$')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
 
    fig,ax = subplots(figsize=(3.1,3))
@@ -103,6 +109,7 @@ with col4:
    plot(t,2*cos(3*t),'--')
    title(r'$f(t)\ \delta((t-\Delta)) $')
    text(-2.3,-1.78,'integral='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
+   xlabel('Time (seconds)')   
    st.pyplot(fig)
   
 with st.expander("Open for comments"):
