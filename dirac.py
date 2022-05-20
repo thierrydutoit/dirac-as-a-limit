@@ -33,6 +33,7 @@ with col1:
    xlim(-3,3); ylim(-10, 10)
    plot(t,rect_a)
    title(r'$a\ rect(a(t-\Delta))$')
+   plt.xlabel('Time (seconds)')
    st.pyplot(fig)
    
    product=multiply(rect_a, 2*cos(3*t))
