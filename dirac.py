@@ -49,7 +49,7 @@ with col1:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$in(t) f(t)) $')
-   text(-2.1,-9,'<in(t),f(t)>='+str(around(integral1,2)),fontsize='xx-large')
+   text(-2.5,-9,'<in(t),f(t)>='+str(around(integral1,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
