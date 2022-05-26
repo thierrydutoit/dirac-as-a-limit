@@ -3,8 +3,13 @@ from numpy import *
 from matplotlib.pyplot import *
 import matplotlib.patches as mpatches
 
-st.title('The Dirac impulse seen as a limit')
+st.title('Scalar product with a Dirac impulse')
 
+st.markdown('''Suppose you are given a black box with some unknown signal $f(t)$ in it, and the only 
+               thing you can do is to provide another signal as input, in which case the black 
+               box will ouput the scalar product between the input signal and $f(t)$.
+               What kind of inpur signal should you use to get the value of $f(\Delta)$? 
+               ''')
 col1, col2 = st.columns(2)
 with col1:
    a=st.slider('Amplification: a', 1.0, 20.0, 1.0)
@@ -122,8 +127,7 @@ with st.expander("Open for comments"):
                a _dirac impluse_ $\delta(t)$, shown on the right.''')
    st.markdown('''In the next four plots, we multiply our three functions with _f(t)=2cos(3t)_. 
                Then we compute the integral of this product. The integral is the area in blue
-               (taken with signs). Multiplying the Dirac impulse by _2cos(3t)_ simply changes
-                the value of the impulse.''')
+               (taken with signs). ''')
    st.markdown('''When _a_ grows, we see that our three functions, although not fully identical, 
                tend to have the same effect _when used in an integral_: only their values very 
                close to their maximum contribute to the result. As a matter of fact, when
@@ -131,3 +135,5 @@ with st.expander("Open for comments"):
    st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t) \,dt=f(0)''')
    st.markdown('''When $\Delta$ is modified, all integrals tend to $f(\Delta)$:''')
    st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
+   st.markdown('''The integral above is nothing else than the scalar product between $f(t)$ and the Dirac impulse:''')
+   st.latex('''<f(t),\delta(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
