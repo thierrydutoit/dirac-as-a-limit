@@ -95,26 +95,27 @@ with col3:
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
-with col4:
-   fig,ax = subplots(figsize=(3.1,3))
-   xlim(-3,3); ylim(-2,2)
-   arrow = mpatches.Arrow(shift, 0, 0, 1)
-   ax.add_patch(arrow)
-   plot([-3,3],[0,0])
-   title(r'$in(t)=\delta(t-\Delta)$')
-   xlabel('Time (seconds)')   
-   st.pyplot(fig)
+if a==20:
+   with col4:
+      fig,ax = subplots(figsize=(3.1,3))
+      xlim(-3,3); ylim(-2,2)
+      arrow = mpatches.Arrow(shift, 0, 0, 1)
+      ax.add_patch(arrow)
+      plot([-3,3],[0,0])
+      title(r'$in(t)=\delta(t-\Delta)$')
+      xlabel('Time (seconds)')   
+      st.pyplot(fig)
 
-   fig,ax = subplots(figsize=(3.1,3))
-   xlim(-3,3); ylim(-2, 2)
-   arrow = mpatches.Arrow(shift, 0, 0, 2*cos(3*shift))
-   ax.add_patch(arrow)
-   plot([-3,3],[0,0])
-   plot(t,2*cos(3*t),'--')
-   title(r'$f(t)\ \delta((t-\Delta)) $')
-   text(-2.3,-1.78,'<in(t),f(t)>='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
-   xlabel('Time (seconds)')   
-   st.pyplot(fig)
+      fig,ax = subplots(figsize=(3.1,3))
+      xlim(-3,3); ylim(-2, 2)
+      arrow = mpatches.Arrow(shift, 0, 0, 2*cos(3*shift))
+      ax.add_patch(arrow)
+      plot([-3,3],[0,0])
+      plot(t,2*cos(3*t),'--')
+      title(r'$f(t)\ \delta((t-\Delta)) $')
+      text(-2.3,-1.78,'<in(t),f(t)>='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
+      xlabel('Time (seconds)')   
+      st.pyplot(fig)
   
 with st.expander("Open for comments"):
    st.markdown('''The three plots on the top left show rectangle, triangle and sinc functions 
@@ -123,7 +124,7 @@ with st.expander("Open for comments"):
    st.markdown('''When _a_ tends to infinity, these functions can no longer be plotted. 
                They are therefore symbolically represented in the bottom plotas an arrow, the 
                amplitude of which is set to the integral of the function: 1, and termed as 
-               a _dirac impluse_ $\delta(t)$, shown on the right.''')
+               a _dirac impluse_ $\delta(t)$, shown on the right when _a_=20.''')
    st.markdown('''In the next four plots, we multiply our three functions with _f(t)=2cos(3t)_. 
                Then we compute the integral of this product. The integral is the area in blue
                (taken with signs). ''')
