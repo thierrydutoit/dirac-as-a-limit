@@ -6,7 +6,7 @@ import matplotlib.patches as mpatches
 st.title('Measuring time content')
 st.markdown('''Suppose you are given a black box with some unknown signal $f(t)$ in it, and the only 
                thing you can do is to provide another signal $in(t)$ as input, in which case the black 
-               box will ouput the scalar product $<in(t),f(t)>$. ''')
+               box will ouput the scalar product between the two: $<in(t),f(t)>$. ''')
 st.markdown('''What kind of input signal should you use to get the value of $f(\Delta)$? ''')
 
 col1, col2 = st.columns(2)
