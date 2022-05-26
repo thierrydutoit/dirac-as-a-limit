@@ -124,7 +124,7 @@ with st.expander("Open for comments"):
    st.markdown('''In the three bottom left plots, we multiply our three functions with _f(t)=2cos(3t)_. 
                Then we compute the scalar product as the integral of this product. The integral 
                is the area in blue (taken with signs) ''')
-   st.latex('''<f(t),\delta(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt''')
+   st.latex('''<f(t),\in(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \in(t-\Delta) \,dt''')
    st.markdown('''When _a_ grows, we see that our three functions, although not fully identical, 
                tend to have the same effect _when used in the integral_: only their values very 
                close to their maximum contribute to the result. ''')
@@ -134,7 +134,7 @@ with st.expander("Open for comments"):
                functions: 1 on the top plot and _f(Delta)_ on the bottom plot.''')
    st.markdown(''' As a matter of fact, we see that when
                $\Delta$ is set to 0, all integrals tends to $f(0)$:''')
-   st.latex('''\<f(t),\delta(t)>=int_{-\infty}^{\infty} f(t) \ \delta(t) \,dt=f(0)''')
+   st.latex('''<f(t),\delta(t)>=\int_{-\infty}^{\infty} f(t) \ \delta(t) \,dt=f(0)''')
    st.markdown('''When $\Delta$ is modified, all integrals tend to $f(\Delta)$:''')
-   st.latex('''\<f(t),\delta(t-\Delta)>=int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
+   st.latex('''<f(t),\delta(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
    
