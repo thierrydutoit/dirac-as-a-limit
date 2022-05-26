@@ -6,8 +6,9 @@ import matplotlib.patches as mpatches
 st.title('Measuring time content')
 
 st.markdown('''Suppose you are given a black box with some unknown signal $f(t)$ in it, and the only 
-               thing you can do is to provide another signal as input, in which case the black 
-               box will ouput the scalar product between the input signal and $f(t)$.
+               thing you can do is to provide another signal $in(t)$ as input, in which case the black 
+               box will ouput the scalar product $<in(t),f(t)>$.
+               
                What kind of input signal should you use to get the value of $f(\Delta)$? 
                ''')
 col1, col2 = st.columns(2)
@@ -37,7 +38,7 @@ with col1:
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-10, 10)
    plot(t,rect_a)
-   title(r'$a\ rect(a(t-\Delta))$')
+   title(r'$in(t)=a\ rect(a(t-\Delta))$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
    
@@ -50,7 +51,7 @@ with col1:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$f(t) \ a\ rect(a(t-\Delta)) $')
-   text(-2.3,-9,'integral='+str(around(integral1,2)),fontsize='xx-large')
+   text(-2.3,-9,'<in(t),f(t)>='+str(around(integral1,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -71,7 +72,7 @@ with col2:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$f(t) \ a\ tri(a(t-\Delta)) $')
-   text(-2.3,-9,'integral='+str(around(integral2,2)),fontsize='xx-large')
+   text(-2.3,-9,'<in(t),f(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -92,7 +93,7 @@ with col3:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$f(t) \ a\ sinc(a(t-\Delta)) $')
-   text(-2.3,-9,'integral='+str(around(integral2,2)),fontsize='xx-large')
+   text(-2.3,-9,'<in(t),f(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -102,7 +103,7 @@ with col4:
    arrow = mpatches.Arrow(shift, 0, 0, 1)
    ax.add_patch(arrow)
    plot([-3,3],[0,0])
-   title(r'$\delta(t-\Delta)$')
+   title(r'$in(t)=\delta(t-\Delta)$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -113,7 +114,7 @@ with col4:
    plot([-3,3],[0,0])
    plot(t,2*cos(3*t),'--')
    title(r'$f(t)\ \delta((t-\Delta)) $')
-   text(-2.3,-1.78,'integral='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
+   text(-2.3,-1.78,'<in(t),f(t)>='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
   
