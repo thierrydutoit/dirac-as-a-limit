@@ -6,7 +6,7 @@ import matplotlib.patches as mpatches
 st.title('Measuring time content')
 st.markdown('''Suppose you are given a black box with some unknown signal $f(t)$ in it, and the only 
                thing you can do is to provide another signal $in(t)$ as input, in which case the black 
-               box will ouput the scalar product between the two: $<in(t),f(t)>$. ''')
+               box will ouput the scalar product between the two: $<f(t),in(t)>$. ''')
 st.markdown('''What kind of input signal should you use to get the value of $f(\Delta)$? ''')
 
 col1, col2 = st.columns(2)
@@ -48,8 +48,8 @@ with col1:
    plot(t,product)
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
-   title(r'$in(t)\ f(t)) $')
-   text(-2.7,-9,'<in(t),f(t)>='+str(around(integral1,2)),fontsize='xx-large')
+   title(r'$f(t)\ in(t)$')
+   text(-2.7,-9,'<f(t),in(t)>='+str(around(integral1,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -69,8 +69,8 @@ with col2:
    plot(t,product)
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
-   title(r'$in(t)\ f(t)$')
-   text(-2.7,-9,'<in(t),f(t)>='+str(around(integral2,2)),fontsize='xx-large')
+   title(r'$f(t)\ in(t)$')
+   text(-2.7,-9,'<f(t),in(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -90,8 +90,8 @@ with col3:
    plot(t,product)
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
-   title(r'$in(t)\ f(t)$')
-   text(-2.7,-9,'<in(t),f(t)>='+str(around(integral2,2)),fontsize='xx-large')
+   title(r'$f(t)\ in(t)$')
+   text(-2.7,-9,'<f(t),in(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -112,8 +112,8 @@ if a>19.5:
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
       plot(t,2*cos(3*t),'--')
-      title(r'$in(t) f(t)$')
-      text(-2.7,-1.78,'<in(t),f(t)>='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
+      title(r'$f(t)\ in(t)$')
+      text(-2.7,-1.78,'<f(t),in(t)>='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
   
@@ -121,9 +121,9 @@ with st.expander("Open for comments"):
    st.markdown('''The three plots on the top left show rectangle, triangle and sinc functions 
                which can be modified using sliders _a_ and $\Delta$ . Notice that the integral 
                of these functions is always 1, whatever _a_.''')
-   st.markdown('''In the three bottom left plots, we multiply our three functions with _f(t)=2cos(3t)_. 
-               Then we compute the scalar product as the integral of this product. The integral 
-               is the area in blue (taken with signs) ''')
+   st.markdown('''In the three bottom left plots, we multiply our three functions _in(t)_ with 
+               _f(t)=2cos(3t)_. Then we compute the scalar product as the integral of this product, 
+               i.e. the area in blue (taken with signs). ''')
    st.latex('''<f(t),in(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ in(t-\Delta) \,dt''')
    st.markdown('''When _a_ grows, we see that our three functions, although not fully identical, 
                tend to have the same effect _when used in the integral_: only their values very 
