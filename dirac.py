@@ -49,7 +49,7 @@ with col1:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$in(t) f(t)) $')
-   text(-2.7,-9,'<in(t),f(t)>='+str(around(integral1,2)),fontsize='xx-large')
+   text(-2.7,-9,'<in(t), f(t)>='+str(around(integral1,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -70,7 +70,7 @@ with col2:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$in(t) f(t)$')
-   text(-2.7,-9,'<in(t),f(t)>='+str(around(integral2,2)),fontsize='xx-large')
+   text(-2.7,-9,'<in(t), f(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -91,7 +91,7 @@ with col3:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$in(t) f(t)$')
-   text(-2.7,-9,'<in(t),f(t)>='+str(around(integral2,2)),fontsize='xx-large')
+   text(-2.7,-9,'<in(t), f(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -113,7 +113,7 @@ if a>19.5:
       plot([-3,3],[0,0])
       plot(t,2*cos(3*t),'--')
       title(r'$in(t) f(t)$')
-      text(-2.7,-1.78,'<in(t),f(t)>='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
+      text(-2.7,-1.78,'<in(t), f(t)>='+str(around(2*cos(3*shift),2)),fontsize='xx-large')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
   
@@ -124,7 +124,7 @@ with st.expander("Open for comments"):
    st.markdown('''In the three bottom left plots, we multiply our three functions with _f(t)=2cos(3t)_. 
                Then we compute the scalar product as the integral of this product. The integral 
                is the area in blue (taken with signs) ''')
-   st.latex('''<f(t),\in(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \in(t-\Delta) \,dt''')
+   st.latex('''<f(t),in(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ in(t-\Delta) \,dt''')
    st.markdown('''When _a_ grows, we see that our three functions, although not fully identical, 
                tend to have the same effect _when used in the integral_: only their values very 
                close to their maximum contribute to the result. ''')
