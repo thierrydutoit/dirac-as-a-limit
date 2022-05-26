@@ -8,7 +8,7 @@ st.title('Scalar product with a Dirac impulse')
 st.markdown('''Suppose you are given a black box with some unknown signal $f(t)$ in it, and the only 
                thing you can do is to provide another signal as input, in which case the black 
                box will ouput the scalar product between the input signal and $f(t)$.
-               What kind of inpur signal should you use to get the value of $f(\Delta)$? 
+               What kind of input signal should you use to get the value of $f(\Delta)$? 
                ''')
 col1, col2 = st.columns(2)
 with col1:
