@@ -49,7 +49,7 @@ with col1:
    ax.fill_between(t,0,product)
    plot(t,2*cos(3*t),'--')
    title(r'$in(t) f(t)) $')
-   text(-2.3,-9,'<in(t),f(t)>='+str(around(integral1,2)),fontsize='xx-large')
+   text(-2.1,-9,'<in(t),f(t)>='+str(around(integral1,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -95,7 +95,7 @@ with col3:
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
-if a==20:
+if a>19.5:
    with col4:
       fig,ax = subplots(figsize=(3.1,3))
       xlim(-3,3); ylim(-2,2)
