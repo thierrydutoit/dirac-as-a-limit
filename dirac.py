@@ -3,7 +3,7 @@ from numpy import *
 from matplotlib.pyplot import *
 import matplotlib.patches as mpatches
 
-st.title('Scalar product with a Dirac impulse')
+st.title('Measuring time content')
 
 st.markdown('''Suppose you are given a black box with some unknown signal $f(t)$ in it, and the only 
                thing you can do is to provide another signal as input, in which case the black 
