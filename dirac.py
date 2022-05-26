@@ -121,19 +121,20 @@ with st.expander("Open for comments"):
    st.markdown('''The three plots on the top left show rectangle, triangle and sinc functions 
                which can be modified using sliders _a_ and $\Delta$ . Notice that the integral 
                of these functions is always 1, whatever _a_.''')
-   st.markdown('''When _a_ tends to infinity, these functions can no longer be plotted. 
-               They are therefore symbolically represented in the bottom plotas an arrow, the 
-               amplitude of which is set to the integral of the function: 1, and termed as 
-               a _dirac impluse_ $\delta(t)$, shown on the right when _a_=20.''')
-   st.markdown('''In the next four plots, we multiply our three functions with _f(t)=2cos(3t)_. 
-               Then we compute the integral of this product. The integral is the area in blue
-               (taken with signs). ''')
+   st.markdown('''In the three bottom left plots, we multiply our three functions with _f(t)=2cos(3t)_. 
+               Then we compute the scalar product as the integral of this product. The integral 
+               is the area in blue (taken with signs) ''')
+   st.latex('''<f(t),\delta(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt''')
    st.markdown('''When _a_ grows, we see that our three functions, although not fully identical, 
-               tend to have the same effect _when used in an integral_: only their values very 
-               close to their maximum contribute to the result. As a matter of fact, when
+               tend to have the same effect _when used in the integral_: only their values very 
+               close to their maximum contribute to the result. ''')
+   st.markdown('''When _a_ tends to infinity (here, to 20), these functions can no longer be plotted. 
+               They are therefore termed as a _dirac impluse_ $\delta(t)$ and symbolically represented 
+               on the as right plots an arrow, the amplitude of which is set to the integral of the 
+               functions: 1 on the top plot and _f(Delta)_ on the bottom plot.''')
+   st.markdown(''' As a matter of fact, we see that when
                $\Delta$ is set to 0, all integrals tends to $f(0)$:''')
-   st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t) \,dt=f(0)''')
+   st.latex('''\<f(t),\delta(t)>=int_{-\infty}^{\infty} f(t) \ \delta(t) \,dt=f(0)''')
    st.markdown('''When $\Delta$ is modified, all integrals tend to $f(\Delta)$:''')
-   st.latex('''\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
-   st.markdown('''The integral above is nothing else than the scalar product between $f(t)$ and the Dirac impulse:''')
-   st.latex('''<f(t),\delta(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
+   st.latex('''\<f(t),\delta(t-\Delta)>=int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
+   
