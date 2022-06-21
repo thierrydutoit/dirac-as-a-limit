@@ -130,7 +130,7 @@ with st.expander("Open for comments"):
                close to their maximum contribute to the result. ''')
    st.markdown('''When _a_ tends to infinity (here, to 20), these functions can no longer be plotted. 
                They are therefore termed as a _dirac impluse_ $\delta(t)$ and symbolically represented 
-               on the as right plots an arrow, the amplitude of which is set to the integral of the 
+               on the right plots an arrow, the amplitude of which is set to the integral of the 
                functions: 1 on the top plot and _f(Delta)_ on the bottom plot.''')
    st.markdown(''' As a matter of fact, we see that when
                $\Delta$ is set to 0, all integrals tends to $f(0)$:''')
