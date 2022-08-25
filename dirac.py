@@ -137,4 +137,6 @@ with st.expander("Open for comments"):
    st.latex('''<f(t),\delta(t)>=\int_{-\infty}^{\infty} f(t) \ \delta(t) \,dt=f(0)''')
    st.markdown('''When $\Delta$ is modified, all integrals tend to $f(\Delta)$:''')
    st.latex('''<f(t),\delta(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
+   st.markdown('''The ideal input function $in(t)$ is therefore $\delta(t-\Delta)$.''')
+
    
