@@ -36,12 +36,12 @@ with col1:
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2, 2)
    plot(t,rect_a)
-   plot(t,cos(t),'--')
+   plot(t,cos(3t),'--')
    title(r'$in(t)=a\ rect(a(t-\Delta))$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
    
-   product=multiply(rect_a, cos(t))
+   product=multiply(rect_a, cos(3t))
    integral1=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
@@ -57,12 +57,12 @@ with col2:
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2, 2)
    plot(t,tri_a)
-   plot(t,cos(t),'--')
+   plot(t,cos(3t),'--')
    title(r'$in(t)=a\ tri(a(t-\Delta))$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
-   product=multiply(tri_a, cos(t))
+   product=multiply(tri_a, cos(3t))
    integral2=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
@@ -78,12 +78,12 @@ with col3:
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2, 2)
    plot(t,sinc_a)
-   plot(t,cos(t),'--')
+   plot(t,cos(3t),'--')
    title(r'$in(t)=a\ sinc(a(t-\Delta))$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
-   product=multiply(sinc_a, cos(t))
+   product=multiply(sinc_a, cos(3t))
    integral3=sum(product)/fe
    
    fig,ax = subplots(figsize=(3,3))
@@ -102,7 +102,7 @@ if a>19.5:
       arrow = mpatches.Arrow(shift, 0, 0, 1)
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
-      plot(t,cos(t),'--')
+      plot(t,cos(3t),'--')
       title(r'$in(t)=\delta(t-\Delta)$')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
@@ -112,14 +112,14 @@ if a>19.5:
       arrow = mpatches.Arrow(shift, 0, 0, cos(shift))
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
-      plot(t,cos(t),'--')
+      plot(t,cos(3t),'--')
       title(r'$f(t)\ in(t)$')
       text(-2.7,-1.5,'<f(t),in(t)>='+str(around(cos(shift),2)),fontsize='xx-large')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
   
 with st.expander("Open for comments"):
-   st.markdown('''The three plots on the top left show the unknown function _f(t)=cos(t)_, as well as 
+   st.markdown('''The three plots on the top left show the unknown function _f(t)=cos(3t)_, as well as 
                rectangle, triangle and sinc functions which can be modified using sliders _a_ and $\Delta$. 
                Notice that the integral of these functions is always 1, whatever _a_.''')
    st.markdown('''In the three bottom left plots, we multiply our three functions _in(t)_ with 
