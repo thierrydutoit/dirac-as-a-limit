@@ -60,7 +60,7 @@ with col1:
    st.pyplot(fig)
 
 with col2:
-      fig,ax = subplots(figsize=(3,3))
+   fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2, 2)
    plot(t,cos(3*t),'--')
    title(r'$f(t)=a\ cos(3t)$')
