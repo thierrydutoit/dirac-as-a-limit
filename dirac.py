@@ -34,7 +34,7 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10,10)
    plot(t,cos(3*t),'--')
    title(r'$f(t)=a\ cos(3t)$')
    xlabel('Time (seconds)')   
@@ -51,7 +51,7 @@ with col1:
    integral1=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
@@ -61,7 +61,7 @@ with col1:
 
 with col2:
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,cos(3*t),'--')
    title(r'$f(t)=a\ cos(3t)$')
    xlabel('Time (seconds)')   
@@ -78,7 +78,7 @@ with col2:
    integral2=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
@@ -88,7 +88,7 @@ with col2:
 
 with col3:
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,cos(3*t),'--')
    title(r'$f(t)=a\ cos(3t)$')
 
@@ -105,7 +105,7 @@ with col3:
    integral3=sum(product)/fe
    
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
