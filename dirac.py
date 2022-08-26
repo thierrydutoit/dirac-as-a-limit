@@ -36,12 +36,12 @@ with col1:
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2, 2)
    plot(t,rect_a)
-   plot(t,cos(3t),'--')
+   plot(t,cos(3*t),'--')
    title(r'$in(t)=a\ rect(a(t-\Delta))$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
    
-   product=multiply(rect_a, cos(3t))
+   product=multiply(rect_a, cos(3*t))
    integral1=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
@@ -57,12 +57,12 @@ with col2:
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2, 2)
    plot(t,tri_a)
-   plot(t,cos(3t),'--')
+   plot(t,cos(3*t),'--')
    title(r'$in(t)=a\ tri(a(t-\Delta))$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
-   product=multiply(tri_a, cos(3t))
+   product=multiply(tri_a, cos(3*t))
    integral2=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
@@ -78,12 +78,12 @@ with col3:
    fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2, 2)
    plot(t,sinc_a)
-   plot(t,cos(3t),'--')
+   plot(t,cos(3*t),'--')
    title(r'$in(t)=a\ sinc(a(t-\Delta))$')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
-   product=multiply(sinc_a, cos(3t))
+   product=multiply(sinc_a, cos(3*t))
    integral3=sum(product)/fe
    
    fig,ax = subplots(figsize=(3,3))
@@ -102,7 +102,7 @@ if a>19.5:
       arrow = mpatches.Arrow(shift, 0, 0, 1)
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
-      plot(t,cos(3t),'--')
+      plot(t,cos(3*t),'--')
       title(r'$in(t)=\delta(t-\Delta)$')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
@@ -112,7 +112,7 @@ if a>19.5:
       arrow = mpatches.Arrow(shift, 0, 0, cos(shift))
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
-      plot(t,cos(3t),'--')
+      plot(t,cos(3*t),'--')
       title(r'$f(t)\ in(t)$')
       text(-2.7,-1.5,'<f(t),in(t)>='+str(around(cos(shift),2)),fontsize='xx-large')
       xlabel('Time (seconds)')   
