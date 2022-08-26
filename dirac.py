@@ -143,9 +143,10 @@ if a>19.5:
       st.pyplot(fig)
   
 with st.expander("Open for comments"):
-   st.markdown('''The three plots on the top left show the unknown function _f(t)=cos(3t)_, as well as 
-               rectangle, triangle and sinc functions which can be modified using sliders _a_ and $\Delta$. 
-               Notice that the integral of these functions is always 1, whatever _a_.''')
+   st.markdown('''The three plots on the top left show the unknown function _f(t)=cos(3t)_.
+               The next three plots show possible candidates for _in(t)_ : rectangle, triangle
+               and sinc functions which can be modified using sliders _a_ and $\Delta$. 
+               Notice that the integral of these three functions is always 1, whatever _a_.''')
    st.markdown('''In the three bottom left plots, we multiply our three functions _in(t)_ with 
                _f(t)_. Then we compute and print the scalar product as the integral of this product, 
                i.e. the area in blue (taken with signs). ''')
