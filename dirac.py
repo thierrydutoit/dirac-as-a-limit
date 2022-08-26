@@ -109,7 +109,7 @@ if a>19.5:
 
       fig,ax = subplots(figsize=(3,3))
       xlim(-3,3); ylim(-2, 2)
-      arrow = mpatches.Arrow(shift, 0, 0, cos(shift))
+      arrow = mpatches.Arrow(shift, 0, 0, cos(3*shift))
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
       plot(t,cos(3*t),'--')
