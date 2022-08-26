@@ -114,7 +114,7 @@ if a>19.5:
       plot([-3,3],[0,0])
       plot(t,cos(3*t),'--')
       title(r'$f(t)\ in(t)$')
-      text(-2.7,-1.5,'<f(t),in(t)>='+str(around(cos(shift),2)),fontsize='xx-large')
+      text(-2.7,-1.5,'<f(t),in(t)>='+str(around(cos(3*shift),2)),fontsize='xx-large')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
   
