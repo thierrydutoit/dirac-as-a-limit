@@ -116,14 +116,14 @@ with col3:
 if a>19.5:
    with col4:
       fig,ax = subplots(figsize=(3,3))
-      xlim(-3,3); ylim(-2, 2)
+      xlim(-3,3); ylim(-3, 3)
       plot(t,cos(3*t),'--')
       title(r'$f(t)=a\ cos(3t)$')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
       
       fig,ax = subplots(figsize=(3,3))
-      xlim(-3,3); ylim(-2, 2)
+      xlim(-3,3); ylim(-3, 3)
       arrow = mpatches.Arrow(shift, 0, 0, 1)
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
@@ -132,7 +132,7 @@ if a>19.5:
       st.pyplot(fig)
 
       fig,ax = subplots(figsize=(3,3))
-      xlim(-3,3); ylim(-2, 2)
+      xlim(-3,3); ylim(-3, 3)
       arrow = mpatches.Arrow(shift, 0, 0, cos(3*shift))
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
