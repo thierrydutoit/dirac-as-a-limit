@@ -41,7 +41,7 @@ with col1:
    st.pyplot(fig)
    
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,rect_a)
    title(r'$in(t)=a\ rect(a(t-\Delta))$')
    xlabel('Time (seconds)')   
@@ -68,7 +68,7 @@ with col2:
    st.pyplot(fig)
 
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,tri_a)
    title(r'$in(t)=a\ tri(a(t-\Delta))$')
    xlabel('Time (seconds)')   
@@ -95,7 +95,7 @@ with col3:
    xlabel('Time (seconds)')   
    st.pyplot(fig)
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-2, 2)
+   xlim(-3,3); ylim(-10, 10)
    plot(t,sinc_a)
    title(r'$in(t)=a\ sinc(a(t-\Delta))$')
    xlabel('Time (seconds)')   
