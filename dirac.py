@@ -112,6 +112,7 @@ if a>19.5:
       arrow = mpatches.Arrow(shift, 0, 0, cos(shift))
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
+      plot(t,cos(t),'--')
       title(r'$f(t)\ in(t)$')
       text(-2.7,-1.5,'<f(t),in(t)>='+str(around(cos(shift),2)),fontsize='xx-large')
       xlabel('Time (seconds)')   
@@ -138,5 +139,3 @@ with st.expander("Open for comments"):
    st.markdown('''When $\Delta$ is modified, all integrals tend to $f(\Delta)$:''')
    st.latex('''<f(t),\delta(t-\Delta)>=\int_{-\infty}^{\infty} f(t) \ \delta(t-\Delta) \,dt=f(\Delta)''')
    st.markdown('''The ideal input function $in(t)$ is therefore $\delta(t-\Delta)$.''')
-
-   
