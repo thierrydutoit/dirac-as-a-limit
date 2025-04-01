@@ -41,7 +41,7 @@ with col1:
    st.pyplot(fig)
    
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-3, 3)
+   xlim(-3,3); ylim(-2, 2)
    plot(t,rect_a)
    title(r'$in(t)=a\ rect(a(t-\Delta))$')
    xlabel('Time (seconds)')   
@@ -51,7 +51,7 @@ with col1:
    integral1=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-3, 3)
+   xlim(-3,3); ylim(-2, 2)
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
@@ -68,7 +68,7 @@ with col2:
    st.pyplot(fig)
 
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-3, 3)
+   xlim(-3,3); ylim(-2, 2)
    plot(t,tri_a)
    title(r'$in(t)=a\ tri(a(t-\Delta))$')
    xlabel('Time (seconds)')   
@@ -78,7 +78,7 @@ with col2:
    integral2=sum(product)/fe
 
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-3, 3)
+   xlim(-3,3); ylim(-2, 2)
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
@@ -95,7 +95,7 @@ with col3:
    xlabel('Time (seconds)')   
    st.pyplot(fig)
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-3, 3)
+   xlim(-3,3); ylim(-2, 2)
    plot(t,sinc_a)
    title(r'$in(t)=a\ sinc(a(t-\Delta))$')
    xlabel('Time (seconds)')   
@@ -105,7 +105,7 @@ with col3:
    integral3=sum(product)/fe
    
    fig,ax = subplots(figsize=(3,3))
-   xlim(-3,3); ylim(-3, 3)
+   xlim(-3,3); ylim(-2, 2)
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
@@ -123,7 +123,7 @@ if a>19.5:
       st.pyplot(fig)
       
       fig,ax = subplots(figsize=(3,3))
-      xlim(-3,3); ylim(-3, 3)
+      xlim(-3,3); ylim(-2, 2)
       arrow = mpatches.Arrow(shift, 0, 0, 1)
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
@@ -132,7 +132,7 @@ if a>19.5:
       st.pyplot(fig)
 
       fig,ax = subplots(figsize=(3,3))
-      xlim(-3,3); ylim(-3, 3)
+      xlim(-3,3); ylim(-2, 2)
       arrow = mpatches.Arrow(shift, 0, 0, cos(3*shift))
       ax.add_patch(arrow)
       plot([-3,3],[0,0])
