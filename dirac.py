@@ -33,7 +33,7 @@ sinc_a=sincard(a*(t-shift))*a
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-   fig,ax = subplots(figsize=(-2,2))
+   fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2,2)
    plot(t,cos(3*t),'--')
    title(r'$f(t)= \ cos(3t)$')
@@ -60,7 +60,7 @@ with col1:
    st.pyplot(fig)
 
 with col2:
-   fig,ax = subplots(figsize=(-2,2))
+   fig,ax = subplots(figsize=(3,3))
    xlim(-3,3); ylim(-2,2)
    plot(t,cos(3*t),'--')
    title(r'$f(t)= \ cos(3t)$')
@@ -87,8 +87,8 @@ with col2:
    st.pyplot(fig)
 
 with col3:
-   fig,ax = subplots(figsize=(-2,2))
-   xlim(-3,3); ylim(-3, 3)
+   fig,ax = subplots(figsize=(3,3))
+   xlim(-3,3); ylim(-2, 2)
    plot(t,cos(3*t),'--')
    title(r'$f(t)= \ cos(3t)$')
 
@@ -115,8 +115,8 @@ with col3:
 
 if a>19.5:
    with col4:
-      fig,ax = subplots(figsize=(-2,2))
-      xlim(-3,3); ylim(-3, 3)
+      fig,ax = subplots(figsize=(3,3))
+      xlim(-3,3); ylim(-2, 2)
       plot(t,cos(3*t),'--')
       title(r'$f(t)=a\ cos(3t)$')
       xlabel('Time (seconds)')   
