@@ -55,7 +55,7 @@ with col1:
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
-   text(-2.7,-2.5,'<f(t),in(t)>='+str(around(integral1,2)),fontsize='xx-large')
+   text(-2.7,-1.5,'<f(t),in(t)>='+str(around(integral1,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -82,7 +82,7 @@ with col2:
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
-   text(-2.7,-2.5,'<f(t),in(t)>='+str(around(integral2,2)),fontsize='xx-large')
+   text(-2.7,-1.5,'<f(t),in(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -109,7 +109,7 @@ with col3:
    plot(t,product)
    ax.fill_between(t,0,product)
    title(r'$f(t)\ in(t)$')
-   text(-2.7,-2.5,'<f(t),in(t)>='+str(around(integral2,2)),fontsize='xx-large')
+   text(-2.7,-1.5,'<f(t),in(t)>='+str(around(integral2,2)),fontsize='xx-large')
    xlabel('Time (seconds)')   
    st.pyplot(fig)
 
@@ -138,7 +138,7 @@ if a>19.5:
       plot([-3,3],[0,0])
       plot(t,cos(3*t),'--')
       title(r'$f(t)\ in(t)$')
-      text(-2.7,-2.5,'<f(t),in(t)>='+str(around(cos(3*shift),2)),fontsize='xx-large')
+      text(-2.7,-1.5,'<f(t),in(t)>='+str(around(cos(3*shift),2)),fontsize='xx-large')
       xlabel('Time (seconds)')   
       st.pyplot(fig)
   
